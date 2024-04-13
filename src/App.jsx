@@ -1,4 +1,3 @@
-import initialContacts from "./initialContacts.json";
 import ContactList from "./components/ContactList/ContactList";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
@@ -8,16 +7,16 @@ import { nanoid } from "nanoid";
 const STORAGE_KEY = "contacts";
 
 function App() {
-  const [contacts, setContacts] = useState(() => {
-    const stringifiedContacts = localStorage.getItem(STORAGE_KEY);
-    const parsedContacts = JSON.parse(stringifiedContacts) || [];
-    return parsedContacts.length ? parsedContacts : initialContacts;
-  });
+  // const [contacts, setContacts] = useState(() => {
+  //   const stringifiedContacts = localStorage.getItem(STORAGE_KEY);
+  //   const parsedContacts = JSON.parse(stringifiedContacts) || [];
+  //   return parsedContacts.length ? parsedContacts : initialContacts;
+  // });
   const [filter, setFilter] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
+  // }, [contacts]);
 
   const addContact = (newContact) => {
     const contact = {
